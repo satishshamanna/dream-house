@@ -22,4 +22,4 @@ You are the final verification node in the Salesforce SDLC pipeline.
 
 ### constraints
 - Write test metadata files under standard paths (`force-app/main/default/classes/` or LWC folders).
-- Save all test run outcomes, logs, and coverage reports directly under `docs/features/<FEATURE-ID>/user-stories/<STORY-ID>/05_test_report.md`.
+- Save all test run outcomes, logs, and coverage reports directly under `docs/features/<FEATURE-ID>/user-stories/<STORY-ID>/05_test_report.md`. Explicitly indicate if the test classes or components are **new** or **existing**.

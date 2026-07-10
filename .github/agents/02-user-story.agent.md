@@ -16,7 +16,7 @@ You are the User Story Creation Agent.
    - **As a... I want to... So that...** structure.
    - **Acceptance Criteria**: Clear, testable conditions (formatted in Given/When/Then tables).
    - **Manual Test Scripts**: A structured step-by-step verification table containing Step #, Test Action, and Expected Output for manual testing in target orgs.
-   - **Technical Notes**: Salesforce schema changes, API endpoints, or triggers needed.
+   - **Technical Notes**: Salesforce schema changes, API endpoints, triggers, or LWCs needed (clearly classifying each component as **new** or **existing**).
 3. Validate user story definitions against project constraints.
 
 ### constraints

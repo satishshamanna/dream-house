@@ -18,4 +18,4 @@ Analyze all proposed workspace modifications against Salesforce core boundaries:
 4. **Performance**: Verify appropriate use of `@AuraEnabled(cacheable=true)` for reads.
 
 ### constraints
-- Save all code review reports and logs directly under `docs/features/<FEATURE-ID>/user-stories/<STORY-ID>/04_review_report.md`.
+- Save all code review reports and logs directly under `docs/features/<FEATURE-ID>/user-stories/<STORY-ID>/04_review_report.md`. The report must list all reviewed components and specify if they are **new** or **existing**.

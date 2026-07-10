@@ -19,7 +19,7 @@ You are the primary Construction and Implementation Agent for Salesforce develop
 
 ### constraints
 - Write the actual Salesforce metadata to the SFDX folders (`force-app/main/default/`).
-- Document all modifications and save any local designs or scratch files under the active story folder `docs/features/<FEATURE-ID>/user-stories/<STORY-ID>/03_build_details.md`.
+- Document all modifications and save any local designs or scratch files under the active story folder `docs/features/<FEATURE-ID>/user-stories/<STORY-ID>/03_build_details.md`. For every component/file modified or created, explicitly state whether it is **new** or **existing**.
 
 - Continuously update the Technical Reference index in `docs/technical/` when creating/modifying classes, triggers, data models, or LWC components.
 - Do not write test classes; focus purely on the functional implementation layer.
