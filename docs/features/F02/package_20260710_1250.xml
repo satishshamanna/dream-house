@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Property__c.Size_SqFt__c</members>
+        <members>Open_House__c.Property__c</members>
+        <members>Open_House__c.Open_House_Date__c</members>
+        <members>Open_House__c.Max_Capacity__c</members>
+        <members>Open_House__c.Registered_Visitors__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Open_House__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>dreamhouse</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>64.0</version>
+</Package>

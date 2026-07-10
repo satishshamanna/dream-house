@@ -1,0 +1,12 @@
+/* Custom styling for open house scheduler component */
+.slds-badge {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+}
+.slds-item {
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+.slds-item:last-child {
+    border-bottom: none;
+}

@@ -1,0 +1,85 @@
+<template>
+    <lightning-card title="Smart Open House Scheduler" icon-name="utility:event">
+        <div class="slds-p-around_medium">
+            <!-- Spinner -->
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Processing..." size="medium"></lightning-spinner>
+            </template>
+
+            <!-- Active Schedule Section -->
+            <div class="slds-section slds-is-open">
+                <h3 class="slds-section__title slds-theme_shade">
+                    <span class="slds-truncate slds-p-horizontal_small" title="Scheduled Open Houses">Scheduled Open Houses</span>
+                </h3>
+                <div class="slds-section__content slds-p-vertical_small">
+                    <template if:true={openHousesList.length}>
+                        <ul class="slds-has-dividers_bottom-space">
+                            <template for:each={openHousesList} for:item="event">
+                                <li key={event.Id} class="slds-item slds-p-vertical_small">
+                                    <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                                        <div>
+                                            <p class="slds-text-title_bold">
+                                                <lightning-formatted-date-time
+                                                    value={event.Open_House_Date__c}
+                                                    year="numeric"
+                                                    month="short"
+                                                    day="2-digit"
+                                                    hour="2-digit"
+                                                    minute="2-digit"
+                                                    hour12="true">
+                                                </lightning-formatted-date-time>
+                                            </p>
+                                            <p class="slds-m-top_xx-small">
+                                                <span class={event.badgeClass}>{event.badgeLabel}</span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <lightning-button
+                                                label="Register Visitor"
+                                                variant="brand"
+                                                size="sm"
+                                                data-id={event.Id}
+                                                disabled={event.isFull}
+                                                onclick={handleRegisterVisitor}>
+                                            </lightning-button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <template if:false={openHousesList.length}>
+                        <p class="slds-text-align_center slds-text-color_weak slds-p-around_medium">
+                            No open houses scheduled for this property.
+                        </p>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Booking Section -->
+            <div class="slds-section slds-is-open slds-m-top_large">
+                <h3 class="slds-section__title slds-theme_shade">
+                    <span class="slds-truncate slds-p-horizontal_small" title="Schedule New Open House">Schedule New Open House</span>
+                </h3>
+                <div class="slds-section__content slds-p-vertical_small">
+                    <div class="slds-form-element">
+                        <lightning-input
+                            type="datetime"
+                            label="Open House Date and Time"
+                            value={selectedDateTime}
+                            onchange={handleDateTimeChange}
+                            required>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-m-top_medium slds-text-align_right">
+                        <lightning-button
+                            label="Schedule Open House"
+                            variant="success"
+                            onclick={handleScheduleOpenHouse}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
