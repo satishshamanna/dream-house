@@ -185,7 +185,7 @@ Reliable systems are built intentionally.
 # #️⃣ Quick Reference
 
 ## ## Directory & File Map
-* **Project Specs**: [project_specs.md](file:///d:/SatishAIProjects/11-GitHubAgents/project_specs.md) (Define before writing code!)
+* **Project Specs**: [project_specs.md](project_specs.md) (Define before writing code!)
 * **Workflow Logic**: `instructions/` (Markdown files describing the steps)
 * **Agent Outputs/Docs**: `docs/` (Planning, specifications, designs)
   * **Epics**: `docs/epics/<EPIC-ID>/` (e.g. `docs/epics/EPIC-101/`)
@@ -202,7 +202,7 @@ Reliable systems are built intentionally.
 * **Local Temp Data**: `.tmp/` (For temporary files and logs)
 
 ## ## Workflow Checklist
-1. **Define**: Specify the new workflow in [project_specs.md](file:///d:/SatishAIProjects/11-GitHubAgents/project_specs.md) and get approval.
+1. **Define**: Specify the new workflow in [project_specs.md](project_specs.md) and get approval.
 2. **Write Instructions**: Create `instructions/<workflow_name>.md`.
 3. **Write Code**: Create Apex and LWC components in `force-app/main/default/`.
 4. **Local Test**: Run Apex tests via SFDX (`sf apex run test`) and verify LWC in scratch org.
