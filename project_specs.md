@@ -58,8 +58,8 @@ The multi-agent system follows a streamlined execution chain where context passe
 * **Handoff**: Hands off to `@04-code-review`.
 
 ### Agent 4: `@04-code-review` (`.github/agents/04-code-review.agent.md`)
-* **Role**: Static code analyzer and gatekeeper enforcing security, governor limits, and BDD/TDD design alignment.
-* **Output**: Code review reports verifying compliance with security guidelines, Gherkin BDD scenarios, and TDD script outlines.
+* **Role**: Static code analyzer and gatekeeper enforcing security, governor limits, BDD/TDD alignment, and DevSecOps compliance rules.
+* **Output**: Code review reports verifying compliance with security guidelines, Gherkin BDD scenarios, TDD script outlines, and PMD/ESLint static code scanner findings.
 * **Handoff**: Hands off to `@05-test`.
 
 ### Agent 5: `@05-test` (`.github/agents/05-test.agent.md`)
