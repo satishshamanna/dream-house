@@ -48,28 +48,28 @@ The multi-agent system follows a streamlined execution chain where context passe
 * **Handoff**: Hands off to `@02-user-story`.
 
 ### Agent 2: `@02-user-story` (`.github/agents/02-user-story.agent.md`)
-* **Role**: Breaks features down into clear, actionable, and implementable User Stories with acceptance criteria.
-* **Output**: Standard User Stories with Description, Acceptance Criteria, and technical design notes.
+* **Role**: Breaks features down into clear, actionable, and implementable User Stories.
+* **Output**: User Story details containing Gherkin BDD Scripts, unit test TDD Scripts, Acceptance Criteria, and technical design notes (identifying new/existing components).
 * **Handoff**: Hands off to `@03-build`.
 
 ### Agent 3: `@03-build` (`.github/agents/03-build.agent.md`)
-* **Role**: Primary developer agent writing Apex backend (classes, triggers) and LWC frontend components.
-* **Output**: Generated Salesforce DX metadata in `force-app/main/default/`.
+* **Role**: Primary developer agent writing Apex backend (classes, triggers) and LWC frontend components to fulfill BDD scenarios and TDD scripts.
+* **Output**: Generated Salesforce DX metadata (marked as new/existing) and build reports mapping implementation to BDD/TDD specs.
 * **Handoff**: Hands off to `@04-code-review`.
 
 ### Agent 4: `@04-code-review` (`.github/agents/04-code-review.agent.md`)
-* **Role**: Security gatekeeper and static analyzer for Apex/LWC code compliance (governor limits, security).
-* **Output**: Code review reports, inline comments on PRs.
+* **Role**: Static code analyzer and gatekeeper enforcing security, governor limits, and BDD/TDD design alignment.
+* **Output**: Code review reports verifying compliance with security guidelines, Gherkin BDD scenarios, and TDD script outlines.
 * **Handoff**: Hands off to `@05-test`.
 
 ### Agent 5: `@05-test` (`.github/agents/05-test.agent.md`)
-* **Role**: Quality assurance agent generating robust Apex unit tests and Jest test suites for LWC.
-* **Output**: Apex test classes (`*Test.cls`) and Jest test scripts with high coverage (target >= 85%).
+* **Role**: Quality assurance agent generating robust Apex unit tests and LWC Jest test suites.
+* **Output**: Test classes and suites (marked as new/existing) ensuring coverage of all Gherkin BDD scenarios and implementing TDD outlines.
 * **Handoff**: Hands off to `@06-release`.
 
 ### Agent 6: `@06-release` (`.github/agents/06-release.agent.md`)
-* **Role**: Relies on Salesforce CLI (`sf`) to run deployment validation, metadata deployment, and release reporting.
-* **Output**: Deployment status logs, release notes, and sandbox/production validation reports.
+* **Role**: Handles validation, deployment command generation, and release reporting via Salesforce CLI.
+* **Output**: Deployment logs, Git command sequences, package manifests, and release notes explicitly listing component statuses (new vs. existing).
 
 ---
 
