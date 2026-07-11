@@ -1,0 +1,47 @@
+# Consolidated Prompt: BDD/TDD/FDD Agent and User Story Implementation
+
+Below is the consolidated prompt to replicate the BDD (Behavior Driven Development), TDD (Test Driven Development), and FDD/TD (Functional & Technical Design) alignment validation:
+
+```text
+Please execute the following tasks to integrate BDD (Behavior Driven Development), TDD (Test Driven Development), and FDD/TD (Functional & Technical Design) alignment validation across the multi-agent pipeline and the first user story (F01-US01).
+
+---
+
+### Task 1: Update Agent Configurations
+
+1. **User Story Agent (`.github/agents/02-user-story.agent.md`)**:
+   Update responsibility 2 to require that every generated User Story includes:
+   - **BDD Scripts**: Gherkin-style scenarios (`Scenario`, `Given`, `When`, `Then` syntax) representing behavioral expectations.
+   - **TDD Scripts**: Unit test skeletons, expected assertions, and mock data setups (Apex test skeletons or LWC Jest specifications).
+
+2. **Build Agent (`.github/agents/03-build.agent.md`)**:
+   - Update responsibilities so the agent designs and builds components to directly satisfy the story's BDD scenarios and TDD script outlines.
+   - Update constraints so that when documenting modifications in `03_build_details.md`, the agent explicitly marks each modified/created file as either **[NEW]** or **[EXISTING]** and links it back to its corresponding BDD scenario or TDD script.
+
+3. **Code Review Agent (`.github/agents/04-code-review.agent.md`)**:
+   - Add check `5. BDD/TDD Alignment` to the validation checklist to confirm that code implementations comply with the Gherkin scenarios and TDD scripts.
+   - Update constraints so that the `04_review_report.md` report lists reviewed components, categorizes them as **new** or **existing**, and explicitly verifies alignment with BDD Gherkin scenarios and TDD script outlines.
+
+4. **Test Agent (`.github/agents/05-test.agent.md`)**:
+   - Add testing standard `3. BDD and TDD Coverage` to ensure tests cover all BDD Gherkin scenarios and implement TDD test designs.
+   - Update constraints so that the `05_test_report.md` explicitly indicates if test classes are **new** or **existing**, and verifies that all defined BDD and TDD test requirements have been successfully run and validated.
+
+---
+
+### Task 2: Backport to F01-US01 (Contact Schema Updates)
+
+1. **Update User Story Details (`docs/features/F01/user-stories/US01/02_story_details.md`)**:
+   - Add a `## BDD Scripts (Gherkin Scenarios)` section containing Gherkin scenarios validating the creation of custom Contact fields (`Budget__c`, `Beds__c`) and field-level permissions.
+   - Add a `## TDD Scripts (Apex/LWC Test Outline & Skeletons)` section containing an Apex test class skeleton (`ContactSchemaTest`) that describes Contact fields and programmatically checks read/write FLS permissions under a Broker user context.
+
+2. **Create the TDD Schema Test Class**:
+   - Create `force-app/main/default/classes/ContactSchemaTest.cls` and `ContactSchemaTest.cls-meta.xml` implementing the test outline to verify that custom fields `Budget__c` and `Beds__c` exist on Contact and are readable/writable by Broker profiles (utilizing `System.runAs`).
+
+3. **Update US01 Phase Reports with Dedicated Alignment Sections**:
+   In `03_build_details.md`, `04_review_report.md`, and `05_test_report.md` for US01, restructure the files to include explicit, dedicated sections titled:
+   - **BDD (Behavior Driven Development) Alignment** (mapping files/checks to Gherkin scenarios)
+   - **TDD (Test Driven Development) Alignment** (mapping implemented test code to test skeletons)
+   - **FDD / TD (Functional & Technical Design) Alignment** (verifying tracebility back to Feature specs and indexes)
+
+Ensure all files compile and run successfully using Salesforce DX standards.
+```
